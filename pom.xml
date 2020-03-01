@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.gmail.kharchenko55</groupId>
     <artifactId>spring-project</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>spring-project</name>
     <description>Demo project for Spring Boot</description>
 
@@ -34,6 +34,7 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <configuration>
                         <goals>install</goals>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -59,6 +60,6 @@
     </build>
 <scm>
    <developerConnection>scm:git:https://github.com/VladKharchenk0/sfg-pet-clinic.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>spring-project-0.0.3</tag>
   </scm>
 </project>
