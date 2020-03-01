@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.gmail.kharchenko55</groupId>
     <artifactId>spring-project</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>spring-project</name>
     <description>Demo project for Spring Boot</description>
 
