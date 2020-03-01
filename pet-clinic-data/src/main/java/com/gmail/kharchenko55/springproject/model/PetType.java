@@ -1,6 +1,6 @@
 package com.gmail.kharchenko55.springproject.model;
 
-public class PetType {
+public class PetType extends BaseEntity {
 
     private  String name;
 
