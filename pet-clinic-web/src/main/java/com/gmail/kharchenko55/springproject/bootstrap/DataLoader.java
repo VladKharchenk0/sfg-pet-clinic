@@ -4,8 +4,7 @@ import com.gmail.kharchenko55.springproject.model.Owner;
 import com.gmail.kharchenko55.springproject.model.Vet;
 import com.gmail.kharchenko55.springproject.services.OwnerService;
 import com.gmail.kharchenko55.springproject.services.VetService;
-import com.gmail.kharchenko55.springproject.services.map.OwnerServiceMap;
-import com.gmail.kharchenko55.springproject.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +13,10 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    @Autowired
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

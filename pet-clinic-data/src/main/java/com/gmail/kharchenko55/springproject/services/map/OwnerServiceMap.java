@@ -2,9 +2,10 @@ package com.gmail.kharchenko55.springproject.services.map;
 
 import com.gmail.kharchenko55.springproject.model.Owner;
 import com.gmail.kharchenko55.springproject.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {

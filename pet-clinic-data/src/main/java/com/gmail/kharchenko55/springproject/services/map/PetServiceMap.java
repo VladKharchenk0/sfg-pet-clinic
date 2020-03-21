@@ -2,9 +2,10 @@ package com.gmail.kharchenko55.springproject.services.map;
 
 import com.gmail.kharchenko55.springproject.model.Pet;
 import com.gmail.kharchenko55.springproject.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
