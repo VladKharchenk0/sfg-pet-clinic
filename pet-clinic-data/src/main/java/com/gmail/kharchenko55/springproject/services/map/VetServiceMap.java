@@ -1,11 +1,11 @@
 package com.gmail.kharchenko55.springproject.services.map;
 
 import com.gmail.kharchenko55.springproject.model.Vet;
-import com.gmail.kharchenko55.springproject.services.CrudService;
+import com.gmail.kharchenko55.springproject.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
