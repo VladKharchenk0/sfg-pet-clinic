@@ -1,6 +1,7 @@
 package com.gmail.kharchenko55.springproject.bootstrap;
 
 import com.gmail.kharchenko55.springproject.model.Owner;
+import com.gmail.kharchenko55.springproject.model.Pet;
 import com.gmail.kharchenko55.springproject.model.PetType;
 import com.gmail.kharchenko55.springproject.model.Vet;
 import com.gmail.kharchenko55.springproject.services.OwnerService;
@@ -9,6 +10,8 @@ import com.gmail.kharchenko55.springproject.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -36,14 +39,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("Green 11");
+        owner1.setCity("Bern");
+        owner1.setTelephone("11");
 
+        Pet mikePet = new Pet();
+        mikePet.setPetType(saveDogType);
+        mikePet.setOwner(owner1);
+        mikePet.setBirthDate(LocalDate.now());
+        mikePet.setName("Benn");
+         owner1.getPets().add(mikePet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
 
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("Brown 21");
+        owner2.setCity("Chicago");
+        owner2.setTelephone("543");
 
+        Pet fionasPet = new Pet();
+        fionasPet.setName("Just Cat");
+        fionasPet.setOwner(owner2);
+        fionasPet.setBirthDate(LocalDate.now());
+        fionasPet.setPetType(saveCatPetType);
+        owner2.getPets().add(fionasPet);
         ownerService.save(owner2);
 
         System.out.println("Loaded Owners....");
