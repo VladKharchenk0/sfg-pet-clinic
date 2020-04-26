@@ -58,8 +58,8 @@
                 </plugin>
             </plugins></pluginManagement>
     </build>
-<scm>
-   <developerConnection>scm:git:https://github.com/VladKharchenk0/sfg-pet-clinic.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+    <scm>
+        <developerConnection>scm:git:https://github.com/VladKharchenk0/sfg-pet-clinic.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 </project>
