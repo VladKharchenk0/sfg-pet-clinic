@@ -8,8 +8,8 @@ import java.util.Set;
 @Table(name = "owners")
 
 public class Owner extends Person {
-@Column(name = "address")
-    private  String address;
+    @Column(name = "address")
+    private String address;
     @Column(name = "city")
     private String city;
     @Column(name = "telephone")
