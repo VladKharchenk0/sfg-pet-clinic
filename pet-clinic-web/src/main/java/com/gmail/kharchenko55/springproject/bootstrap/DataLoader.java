@@ -1,10 +1,7 @@
 package com.gmail.kharchenko55.springproject.bootstrap;
 
 import com.gmail.kharchenko55.springproject.model.*;
-import com.gmail.kharchenko55.springproject.services.OwnerService;
-import com.gmail.kharchenko55.springproject.services.PetTypeService;
-import com.gmail.kharchenko55.springproject.services.SpecialtyService;
-import com.gmail.kharchenko55.springproject.services.VetService;
+import com.gmail.kharchenko55.springproject.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,14 +14,16 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService typeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
     @Autowired
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService typeService,
-                      SpecialtyService specialtyService) {
+                      SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.typeService = typeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -86,6 +85,14 @@ public class DataLoader implements CommandLineRunner {
         fionasPet.setPetType(saveCatPetType);
         owner2.getPets().add(fionasPet);
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
+
 
         System.out.println("Loaded Owners....");
 
